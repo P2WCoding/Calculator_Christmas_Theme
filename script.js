@@ -78,7 +78,7 @@ function createSnowflake() {
   }, 5000 + Math.random() * 3000); // Random removal time for varied effect
 }
 
-setInterval(createSnowflake, 100);
+setInterval(createSnowflake, 500);
 
     // Keydown event listener
 document.addEventListener('keydown', function(event) {
