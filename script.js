@@ -63,6 +63,10 @@ function createSnowflake() {
   const snowflake = document.createElement('div');
   snowflake.classList.add('snowflake');
   snowflake.style.left = Math.random() * window.innerWidth + 'px';
+
+  // Set a negative starting position for the top property
+  snowflake.style.top = -60 + 'px'; // Assuming the snowflake size is not more than 25px
+
   snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Random duration
   snowflake.style.opacity = Math.random();
   snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
@@ -71,7 +75,7 @@ function createSnowflake() {
   // Remove snowflake after it has fallen
   setTimeout(() => {
     snowflake.remove();
-  }, 5000);
+  }, 5000 + Math.random() * 3000); // Random removal time for varied effect
 }
 
 setInterval(createSnowflake, 100);
